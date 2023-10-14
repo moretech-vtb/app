@@ -1,0 +1,132 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorButtonBackground</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_background</item>
+    </style>
+
+    <style name="ProgressBarStyle" parent="@style/Base.Widget.AppCompat.ProgressBar">
+        <item name="android:layout_width">@dimen/progress_bar</item>
+        <item name="android:layout_height">@dimen/progress_bar</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="InfoTextStyle" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/colorTextViewText</item>
+        <item name="android:textSize">@dimen/support_text_size</item>
+    </style>
+
+    <style name="LoginRegisterTextStyle" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/login_header</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/header_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="EditLoginTextStyle" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:background">@drawable/edit_text_border</item>
+        <item name="android:inputType">textNoSuggestions</item>
+        <item name="android:hint">@string/login_hint</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:textColor">@color/colorEditText</item>
+        <item name="android:textColorHint">@color/colorHint</item>
+        <item name="android:textSize">@dimen/edit_login_text_size</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="EditPasswordTextStyle" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:background">@drawable/edit_text_border</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:hint">@string/password_hint</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:textColor">@color/colorEditText</item>
+        <item name="android:textColorHint">@color/colorHint</item>
+        <item name="android:textSize">@dimen/edit_login_text_size</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="ButtonTextStyle" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/colorButton</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="BottomSheetButtonTextStyle" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/colorButton</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="EditTextStyle" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:background">@drawable/edit_text_border</item>
+        <item name="android:inputType">textNoSuggestions</item>
+        <item name="android:lines">1</item>
+        <item name="android:textColor">@color/colorEditText</item>
+        <item name="android:textColorHint">@color/colorHint</item>
+        <item name="android:textSize">@dimen/edit_text_size</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+    </style>
+
+    <style name="EditTextInfoStyle" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:textColor">@color/colorEditInfoText</item>
+        <item name="android:textSize">@dimen/edit_info_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

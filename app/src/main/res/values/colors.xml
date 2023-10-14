@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@android:color/black</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorStroke">#666666</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorYellow">#FEDD38</color>
+
+    <color name="colorCyan">#00AAFF</color>
+    <color name="colorCyan40">#9BDDFC</color>
+    <color name="colorVtb">#002882</color>
+    <color name="colorVtb80">#33539B</color>
+
+
+    <color name="colorWhite">@android:color/white</color>
+    <color name="colorButton">@android:color/white</color>
+    <color name="colorButtonBackground">#73f2ff</color>
+    <color name="colorBackground">@android:color/white</color>
+
+    <color name="colorEditText">@android:color/black</color>
+    <color name="colorEditInfoText">#C0C0C0</color>
+    <color name="colorInfo">#C0C0C0</color>
+    <color name="colorHint">#A3A3A3</color>
+    <color name="colorSupport">@android:color/black</color>
+
+    <color name="colorTextView">#000000</color>
+    <color name="colorSupportText">#000000</color>
+    <color name="colorTextViewText">#000000</color>
+
+</resources>

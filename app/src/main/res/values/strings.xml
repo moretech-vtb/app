@@ -1,0 +1,42 @@
+<resources>
+    <!--App Info-->
+    <string name="app_name">ВТБ</string>
+
+    <!--Login-->
+    <string name="login_header">Вход в Аккаунт</string>
+    <string name="login_description">Добро пожаловать обратно! Пожалуйста, введите ваши учетные данные, чтобы получить доступ к вашему аккаунту контролёра автобуса. Ваша безопасность и удобство для нас важны.</string>
+    <string name="login_hint">Логин</string>
+    <string name="password_hint">Пароль</string>
+    <string name="invalid_number">Заполните номер телефона правильно</string>
+    <string name="next">Далее</string>
+
+    <!--Main-->
+    <string name="last_fetch_time">Время последнего  обновления: %1$s</string>
+    <string name="update_manually">Обновить данные</string>
+
+    <string name="unexpected_error">Ошибка. Попробуйте позже или обновите приложение</string>
+    <string name="error_unknown">Неизвестная ошибка</string>
+    <string name="error_couldnt_reach_server">Ой! Не удалось подключиться к серверу. Проверьте подключение к Интернету.</string>
+    <string name="oops_something_went_wrong">Ой! Что-то пошло не так. Повторите попытку.</string>
+    <string name="error_field_empty">Это поле не может быть пустым</string>
+    <string name="fill_fields">Заполните все поля правильно</string>
+
+    <string name="atm">Банкомат</string>
+    <string name="road">Проложить маршрут</string>
+    <string name="all_days">Круглосуточно</string>
+    <string name="services">Особенности</string>
+    <string name="wheelchairService">wheelchairService</string>
+    <string name="blindService">blindService</string>
+    <string name="nfcService">nfcService</string>
+    <string name="qrService">qrService</string>
+    <string name="supportsUsd">supportsUsd</string>
+    <string name="supportsChargeRub">supportsChargeRub</string>
+    <string name="supportsEur">supportsEur</string>
+    <string name="supportsRub">supportsRub</string>
+    <string name="start_trip">Выдвигаемся</string>
+    <string name="my_location">Мое местоположение</string>
+    <string name="start">В путь</string>
+    <string name="by_car">На машине</string>
+    <string name="by_foot">Пешком</string>
+
+</resources>
