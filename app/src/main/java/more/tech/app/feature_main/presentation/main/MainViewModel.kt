@@ -4,19 +4,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import more.tech.app.core.data.SharedPrefsManager
-import more.tech.app.core.presentation.util.ex.toDistance
-import more.tech.app.core.presentation.util.ex.toTime
 import more.tech.app.core.util.CustomResult
 import more.tech.app.feature_main.domain.models.ATM
 import more.tech.app.feature_main.domain.models.Office
 import more.tech.app.feature_main.domain.use_case.FetchATMsUseCase
 import more.tech.app.feature_main.domain.use_case.FetchOfficesUseCase
-import org.osmdroid.bonuspack.routing.OSRMRoadManager
 import org.osmdroid.util.GeoPoint
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -79,7 +73,7 @@ class MainViewModel @Inject constructor(
 
     }
 
-    fun fetchOffices() {
+    private fun fetchOffices() {
         progressBarVisibility.value = true
 
         viewModelScope.launch {
@@ -130,9 +124,9 @@ class MainViewModel @Inject constructor(
 
     }
 
-    fun filterOffices(filters: Set<String>) {
+    fun filterOffices(filters: Set<String>, myLocation: GeoPoint) {
         if (filters.isEmpty()) {
-            displayFilteredOfficesOnMap(fullOfficesList)
+            displayFilteredOfficesOnMap(fullOfficesList, myLocation)
             return
         }
 
@@ -147,7 +141,7 @@ class MainViewModel @Inject constructor(
                 else -> filteredOffices
             }
         }
-        displayFilteredOfficesOnMap(filteredOffices)
+        displayFilteredOfficesOnMap(filteredOffices, myLocation)
     }
 
 
@@ -163,8 +157,16 @@ class MainViewModel @Inject constructor(
         filteredATMsLiveData.value = sortedATMs
     }
 
-    private fun displayFilteredOfficesOnMap(filteredOffices: List<Office>) {
-        filteredOfficesLiveData.value = filteredOffices
+    private fun displayFilteredOfficesOnMap(filteredOffices: List<Office>, myLocation: GeoPoint) {
+        val sortedOffices = filteredOffices.sortedBy { office ->
+            calculateDistance(
+                atmLatitude = office.latitude,
+                atmLongitude = office.longitude,
+                myLocation = myLocation,
+            )
+        }
+
+        filteredOfficesLiveData.value = sortedOffices
     }
 
     private fun calculateDistance(

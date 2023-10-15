@@ -27,7 +27,6 @@ import more.tech.app.R
 import more.tech.app.core.presentation.util.ex.onBackPressedDispatcher
 import more.tech.app.core.presentation.util.ex.toDistance
 import more.tech.app.core.presentation.util.ex.toTime
-import more.tech.app.core.presentation.util.ex.toast
 import more.tech.app.core.util.CustomResult
 import more.tech.app.databinding.BottomAtmFilterBinding
 import more.tech.app.databinding.BottomOfficeFilterBinding
@@ -253,8 +252,7 @@ class MainFragment : Fragment(), MarkerClickListener {
             for (i in filteredList.indices) {
                 val marker = setMarker(filteredList[i])
 
-                // Show info about the first filtered item
-                if (i == 0 && filteredList[i] is ATM) {
+                if (i == 0) {
                     showInfoAboutFirstFilteredItem(marker, filteredList[i])
                 }
             }
@@ -479,7 +477,10 @@ class MainFragment : Fragment(), MarkerClickListener {
         bottomSheetBinding.filterRecyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         bottomSheetBinding.btnStart.setOnClickListener {
-            viewModel.filterOffices(adapter.getSelectedKeys())
+            viewModel.filterOffices(
+                adapter.getSelectedKeys(),
+                locationOverlay.myLocation ?: startPoint
+            )
             bottomSheetDialog.dismiss()
         }
         bottomSheetBinding.closeButton.setOnClickListener {
