@@ -4,7 +4,6 @@
 
     <!--Login-->
     <string name="login_header">Вход в Аккаунт</string>
-    <string name="login_description">Добро пожаловать обратно! Пожалуйста, введите ваши учетные данные, чтобы получить доступ к вашему аккаунту контролёра автобуса. Ваша безопасность и удобство для нас важны.</string>
     <string name="login_hint">Логин</string>
     <string name="password_hint">Пароль</string>
     <string name="invalid_number">Заполните номер телефона правильно</string>
@@ -21,22 +20,44 @@
     <string name="error_field_empty">Это поле не может быть пустым</string>
     <string name="fill_fields">Заполните все поля правильно</string>
 
-    <string name="atm">Банкомат</string>
     <string name="road">Проложить маршрут</string>
-    <string name="all_days">Круглосуточно</string>
+    <string name="atm">Банкомат</string>
+    <string name="allDay">Круглосуточно</string>
     <string name="services">Особенности</string>
-    <string name="wheelchairService">wheelchairService</string>
-    <string name="blindService">blindService</string>
-    <string name="nfcService">nfcService</string>
-    <string name="qrService">qrService</string>
-    <string name="supportsUsd">supportsUsd</string>
-    <string name="supportsChargeRub">supportsChargeRub</string>
-    <string name="supportsEur">supportsEur</string>
-    <string name="supportsRub">supportsRub</string>
+    <string name="wheelchairService">Доступно для маломобильных граждан</string>
+    <string name="blindService">Для незрячих</string>
+    <string name="nfcService">NFC для обслуживания банковских карт</string>
+    <string name="qrService">Платежи по QR-коду</string>
+    <string name="supportsUsd">Банкомат принимает доллары США</string>
+    <string name="supportsChargeRub">Поддерживает оплату услуг рублями</string>
+    <string name="supportsEur">Банкомат принимает евро</string>
+    <string name="supportsRub">Банкомат принимает рубли</string>
+
+    <string name="office">Офис</string>
+    <string name="openHours">Режим работы для ЮЛ</string>
+    <string name="openHoursInd">Режим работы для ФЛ</string>
+    <string name="officeType">Открытый тип офиса: %s</string>
+    <string name="rko">Наличие РКО: %s</string>
+    <string name="suoAvailability">Наличие СУО: %s</string>
+    <string name="kep">Признак выдачи КЭП: %s</string>
+    <string name="hasRamp">Наличие пандуса: %s</string>
+
+    <string name="suoAvailabilityStatus">Наличие СУО</string>
+    <string name="hasRampStatus">Наличие пандуса</string>
+    <string name="supportsInd">ФЛ</string>
+    <string name="supports">ЮЛ</string>
+
     <string name="start_trip">Выдвигаемся</string>
     <string name="my_location">Мое местоположение</string>
     <string name="start">В путь</string>
     <string name="by_car">На машине</string>
     <string name="by_foot">Пешком</string>
+    <string name="atms">Банкоматы</string>
+    <string name="offices">Офисы</string>
+    <string name="request">Запись</string>
+
+    <string name="atm_search">Поиск банкомата</string>
+    <string name="office_search">Поиск офиса</string>
+    <string name="search">Поиск</string>
 
 </resources>

@@ -18,10 +18,12 @@ data class Office(
     val metroStation: String? = null,
     val openHoursIndividual: List<OpenHour>,
     val openHours: List<OpenHour>,
+    val loadsIndividual: List<String>? = null,
+    val loads: List<String>? = null,
 )
 
 data class OpenHour(
-    val id: Int,
+    val id: String,
     val dayOfWeek: String,
     val hours: String,
 )

@@ -3,12 +3,13 @@ package more.tech.app.feature_main.data.local.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
+import more.tech.app.feature_main.data.local.converters.ListTypeConverter
 import more.tech.app.feature_main.data.local.converters.OpenHourTypeConverter
 import more.tech.app.feature_main.domain.models.Office
 import more.tech.app.feature_main.domain.models.OpenHour
 
 @Entity(tableName = "offices")
-@TypeConverters(OpenHourTypeConverter::class)
+@TypeConverters(OpenHourTypeConverter::class, ListTypeConverter::class)
 data class OfficeEntity(
     @PrimaryKey val id: String,
     val name: String,
@@ -26,6 +27,8 @@ data class OfficeEntity(
     val metroStation: String? = null,
     val openHoursIndividual: List<OpenHour>,
     val openHours: List<OpenHour>,
+    val loadsIndividual: List<String>? = null,
+    val loads: List<String>? = null,
 ) {
     fun toOffice(): Office {
         return Office(
@@ -45,6 +48,8 @@ data class OfficeEntity(
             metroStation = metroStation,
             openHoursIndividual = openHoursIndividual,
             openHours = openHours,
+            loadsIndividual = loadsIndividual ?: listOf(),
+            loads = loads ?: listOf(),
         )
     }
 }

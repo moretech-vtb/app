@@ -47,10 +47,14 @@ data class OfficeDTO(
     val status: String,
     @SerializedName("metro_station")
     val metroStation: String? = null,
-    @SerializedName("open_hours_individual")
+    @SerializedName("openHoursIndividual")
     val openHoursIndividual: List<OpenHourDTO>,
     @SerializedName("open_hours")
     val openHours: List<OpenHourDTO>,
+    @SerializedName("loads_individual")
+    val loadsIndividual: List<String>? = null,
+    @SerializedName("loads")
+    val loads: List<String>? = null,
 ) {
     fun toOffice(): Office {
         return Office(
@@ -68,8 +72,18 @@ data class OfficeDTO(
             salePointFormat = salePointFormat,
             status = status,
             metroStation = metroStation,
-            openHoursIndividual = openHoursIndividual.map { it.toOpenHour() },
-            openHours = openHours.map { it.toOpenHour() },
+            openHoursIndividual = if (openHoursIndividual.isEmpty()) {
+                emptyList()
+            } else {
+                openHoursIndividual.map { it.toOpenHour() }
+            },
+            openHours = if (openHours.isEmpty()) {
+                emptyList()
+            } else {
+                openHours.map { it.toOpenHour() }
+            },
+            loadsIndividual = loadsIndividual ?: listOf(),
+            loads = loads ?: listOf(),
         )
     }
 
@@ -89,15 +103,25 @@ data class OfficeDTO(
             salePointFormat = salePointFormat,
             status = status,
             metroStation = metroStation,
-            openHoursIndividual = openHoursIndividual.map { it.toOpenHour() },
-            openHours = openHours.map { it.toOpenHour() },
+            openHoursIndividual = if (openHoursIndividual.isEmpty()) {
+                emptyList()
+            } else {
+                openHoursIndividual.map { it.toOpenHour() }
+            },
+            openHours = if (openHours.isEmpty()) {
+                emptyList()
+            } else {
+                openHours.map { it.toOpenHour() }
+            },
+            loadsIndividual = loadsIndividual ?: listOf(),
+            loads = loads ?: listOf(),
         )
     }
 }
 
 data class OpenHourDTO(
     @SerializedName("id")
-    val id: Int,
+    val id: String,
     @SerializedName("day_of_week")
     val dayOfWeek: String,
     @SerializedName("hours")

@@ -20,7 +20,6 @@ class MainRepositoryImpl(
         if (networkUtils.isNetworkAvailable()) {
             try {
                 val remoteData = remoteDataSource.fetchATMs()
-                Log.d("QRScanner", "Scanned: " + remoteData.size.toString())
                 localDataSource.insertATMs(remoteData.map { dto -> dto.toATMEntity() })
 
                 return CustomResult.Success(remoteData.map { dto -> dto.toATM() })
@@ -44,7 +43,6 @@ class MainRepositoryImpl(
         if (networkUtils.isNetworkAvailable()) {
             try {
                 val remoteData = remoteDataSource.fetchOffices()
-                Log.d("QRScanner", "Scanned: " + remoteData.size.toString())
                 localDataSource.insertOffices(remoteData.map { dto -> dto.toOfficeEntity() })
 
                 return CustomResult.Success(remoteData.map { dto -> dto.toOffice() })

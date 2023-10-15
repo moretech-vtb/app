@@ -11,6 +11,7 @@ import androidx.work.PeriodicWorkRequest
 import androidx.work.WorkManager
 import dagger.hilt.android.HiltAndroidApp
 import more.tech.app.feature_main.utils.UpdateWorker
+import java.io.File
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -23,6 +24,11 @@ class App : Application(), Configuration.Provider {
     override fun onCreate() {
         super.onCreate()
         scheduleUpdateWorker()
+        val osmdroidCachePath = File(filesDir, "osmdroid")
+        if (!osmdroidCachePath.exists()) {
+            osmdroidCachePath.mkdirs()
+        }
+        org.osmdroid.config.Configuration.getInstance().osmdroidBasePath = osmdroidCachePath
     }
 
     override fun attachBaseContext(context: Context?) {

@@ -28,14 +28,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_description"
-                style="@style/InfoTextStyle"
-                android:text="@string/login_description"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_header"/>
-
             <EditText
                 android:id="@+id/input_login"
                 style="@style/EditLoginTextStyle"
@@ -43,7 +35,7 @@
                 android:importantForAutofill="no"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_description"
+                app:layout_constraintTop_toBottomOf="@+id/tv_header"
                 tools:ignore="LabelFor" />
 
             <EditText

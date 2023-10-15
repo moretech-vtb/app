@@ -11,7 +11,7 @@
     <dimen name="edit_login_text_size">22sp</dimen>
 
     <dimen name="button_height">56dp</dimen>
-    <dimen name="button_radius">20dp</dimen>
+    <dimen name="button_radius">10dp</dimen>
     <dimen name="button_text_size">18sp</dimen>
 
     <dimen name="support_text_size">16sp</dimen>
