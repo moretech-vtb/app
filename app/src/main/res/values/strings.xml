@@ -10,9 +10,6 @@
     <string name="next">Далее</string>
 
     <!--Main-->
-    <string name="last_fetch_time">Время последнего  обновления: %1$s</string>
-    <string name="update_manually">Обновить данные</string>
-
     <string name="unexpected_error">Ошибка. Попробуйте позже или обновите приложение</string>
     <string name="error_unknown">Неизвестная ошибка</string>
     <string name="error_couldnt_reach_server">Ой! Не удалось подключиться к серверу. Проверьте подключение к Интернету.</string>

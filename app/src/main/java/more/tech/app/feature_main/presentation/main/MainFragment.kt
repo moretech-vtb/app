@@ -178,7 +178,6 @@ class MainFragment : Fragment(), MarkerClickListener {
             withContext(Dispatchers.Main) {
                 binding.map.overlays.add(0, roadOverlay)
                 binding.map.invalidate()
-                toast(road.mDuration.toString())
             }
 
         }
@@ -190,9 +189,6 @@ class MainFragment : Fragment(), MarkerClickListener {
     }
 
     private fun initListeners() {
-        binding.btnUpdate.setOnClickListener {
-            viewModel.fetchOffices()
-        }
         binding.getMyLocation.setOnClickListener {
             getLocation()
         }
@@ -208,11 +204,6 @@ class MainFragment : Fragment(), MarkerClickListener {
     private fun initObservers() {
         viewModel.progressBarVisibility.observe(viewLifecycleOwner) { visible ->
             binding.progressBar.visibility = if (visible) View.VISIBLE else View.GONE
-        }
-
-        viewModel.lastFetchTime.observe(viewLifecycleOwner) { time ->
-            binding.lastUpdateTimeTextView.text =
-                getString(R.string.last_fetch_time, time)
         }
         viewModel.atmsLiveData.observe(viewLifecycleOwner) { result ->
             when (result) {
